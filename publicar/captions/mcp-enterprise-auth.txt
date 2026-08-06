@@ -1,0 +1,15 @@
+🔐 MCP ya se autentica como empresa: un solo login para todos tus servidores
+
+La spec 2026-07-28 estabiliza Enterprise-Managed Authorization: las organizaciones gestionan de forma centralizada quién accede a qué servidor MCP, y cada usuario entra una sola vez en vez de autenticarse servidor por servidor.
+
+En este carrusel:
+▫️ Qué resuelve esta extensión y cómo cambia el login
+▫️ Los números: SDKs de TS y Python superan 1000M de descargas totales, y los Tier 1 combinados rondan los 500M al mes
+▫️ Quién ya la adoptó: Anthropic, Microsoft, Okta
+▫️ El otro cambio de la spec: Dynamic Client Registration se deprecó en favor de CIMD
+
+¿Tu equipo ya conecta varios servidores MCP? ¿Cómo manejan el acceso hoy? Cuéntame 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#MCP #modelcontextprotocol #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #tooling

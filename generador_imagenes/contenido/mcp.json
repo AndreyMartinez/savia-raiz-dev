@@ -1,0 +1,61 @@
+{
+  "slug": "mcp",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "CONCEPTO · IA / TOOLING",
+      "title": "¿Qué es MCP?",
+      "sub": "Model Context Protocol, explicado sin rodeos."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "LA IDEA",
+      "h": "El \u201cUSB-C\u201d de la IA",
+      "body": "MCP es un protocolo abierto que conecta modelos de IA con herramientas y datos externos de forma estándar. En lugar de integrar cada app a mano, todos hablan el mismo idioma."
+    },
+    {
+      "kind": "list",
+      "num": "03",
+      "kicker": "POR QUÉ IMPORTA",
+      "h": "El problema que resuelve",
+      "items": [
+        ["Antes:", "cada integración era código a medida (N×M)."],
+        ["Con MCP:", "un servidor sirve a muchos clientes."],
+        ["Resultado:", "menos pegamento, más reutilización."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "LAS PIEZAS",
+      "h": "Host, cliente y servidor",
+      "items": [
+        ["Host:", "la app de IA (por ejemplo, Claude)."],
+        ["Cliente:", "habla el protocolo dentro del host."],
+        ["Servidor:", "expone tools, resources y prompts."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "EN LA PRÁCTICA",
+      "h": "Un servidor MCP ofrece\u2026",
+      "items": [
+        ["Tools:", "acciones (crear un issue, leer un archivo)."],
+        ["Resources:", "datos (documentos, filas de una BD)."],
+        ["Prompts:", "plantillas reutilizables."]
+      ],
+      "foot": "Directorio oficial: registry.modelcontextprotocol.io"
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "MCP es el estándar que permite a tu IA usar herramientas sin integraciones a medida.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@savia.raiz"]
+    }
+  ]
+}

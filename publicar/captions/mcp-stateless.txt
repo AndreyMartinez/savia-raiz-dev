@@ -1,0 +1,15 @@
+⚙️ MCP se vuelve stateless: la revisión más grande desde su lanzamiento
+
+La spec 2026-07-28 elimina el handshake initialize y las sesiones (Mcp-Session-Id). Cada request ahora trae su propio contexto y puede atenderlo cualquier instancia del servidor: adiós sticky sessions, hola load balancer plano.
+
+En este carrusel:
+▫️ Qué significa "stateless" para un servidor MCP
+▫️ El problema de infraestructura que resuelve
+▫️ Lo nuevo: MCP Apps, Tasks extension y auth tipo OAuth/OIDC
+▫️ El cronograma: RC en mayo, spec final el 28 de julio
+
+¿Ya tienes un servidor MCP corriendo? ¿Vas a migrar a la nueva spec? Cuéntame 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#MCP #modelcontextprotocol #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #tooling

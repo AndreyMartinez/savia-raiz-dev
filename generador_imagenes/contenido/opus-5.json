@@ -1,0 +1,63 @@
+{
+  "slug": "opus-5",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "LANZAMIENTO · IA",
+      "title": "Claude Opus 5 ya está aquí",
+      "sub": "Casi la inteligencia de Fable 5, a la mitad del precio."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "EL LANZAMIENTO",
+      "h": "¿Qué cambió?",
+      "body": "Anthropic lanzó Opus 5 el 24 de julio de 2026, al mismo precio que Opus 4.8 ($5 / $25 por millón de tokens de entrada/salida) pero con saltos grandes en benchmarks de código, agentes y ciencia."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EN NÚMEROS",
+      "h": "Los benchmarks lo dicen todo",
+      "unit": "×",
+      "max": 3.5,
+      "bars": [
+        {"label": "ARC-AGI 3", "value": 3.0, "note": "vs. el siguiente mejor modelo"},
+        {"label": "Frontier-Bench (coding)", "value": 2.0, "note": "vs. Opus 4.8, a menor costo"},
+        {"label": "Zapier AutomationBench", "value": 1.5, "note": "vs. el siguiente mejor, mismo costo"}
+      ],
+      "foot": "Fuente oficial: anthropic.com/news/claude-opus-5"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "PRECIO VS RENDIMIENTO",
+      "h": "La otra mitad de la historia",
+      "items": [
+        ["CursorBench 3.2:", "a 0.5% de Fable 5, a la mitad de costo por tarea."],
+        ["OSWorld 2.0:", "supera a Fable 5 con poco más de un tercio de su costo."],
+        ["Ciencia:", "+10.2 pts en química orgánica y +7.7 pts en predicción de proteínas vs. Opus 4.8."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "FICHA TÉCNICA",
+      "h": "Los números base",
+      "items": [
+        ["Precio:", "$5 / $25 por millón de tokens (igual que Opus 4.8)."],
+        ["Contexto:", "ventana de 1M de tokens, hasta 128K de salida."],
+        ["Corte de conocimiento:", "mayo 2026, el más reciente de la familia Claude."]
+      ]
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "Opus 5 acerca la inteligencia de frontera a la mitad del precio: mismo costo que Opus 4.8, resultados de otra liga.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@savia.raiz"]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+💸 OpenAI le bajó el precio a GPT-5.6 (y no fue parejo)
+
+El 30 de julio de 2026, OpenAI recortó los precios de API de toda la familia GPT-5.6: Luna baja 80% (ahora $0.20/$1.20 por millón de tokens in/out), Terra baja 20% ($2/$12), y Sol mantiene su precio ($5/$30) pero estrena "Fast mode" — hasta 2.5× más rápido al doble de precio.
+
+En este carrusel:
+▫️ Qué cambió y por qué (spoiler: sensibilidad al costo por token)
+▫️ El recorte en gráfico: Luna, Terra y Sol lado a lado
+▫️ Precios exactos por millón de tokens
+▫️ Cuándo conviene cada modelo — y qué es Fast mode
+
+¿Con cuál de los tres estás construyendo ahora mismo? 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#OpenAI #GPT56 #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #API #machinelearning

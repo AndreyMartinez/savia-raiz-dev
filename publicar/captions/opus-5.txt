@@ -1,0 +1,15 @@
+🚀 Claude Opus 5 ya está aquí: casi Fable 5, a la mitad del precio
+
+Anthropic lo lanzó el 24 de julio de 2026, al mismo precio que Opus 4.8 ($5/$25 por millón de tokens). Los benchmarks subieron mucho: en ARC-AGI 3 saca 3× el puntaje del siguiente mejor modelo, y en Frontier-Bench más que duplica a Opus 4.8.
+
+En este carrusel:
+▫️ Qué cambió y cuándo salió
+▫️ Los benchmarks en un gráfico: ARC-AGI 3, Frontier-Bench, Zapier AutomationBench
+▫️ Precio vs. rendimiento frente a Fable 5 (CursorBench, OSWorld)
+▫️ Ficha técnica: contexto de 1M tokens, corte de conocimiento mayo 2026
+
+¿Ya lo probaste? ¿Qué tarea le vas a tirar primero? 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#ClaudeOpus5 #Anthropic #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #machinelearning

@@ -1,0 +1,15 @@
+🧩 ¿Qué es MCP (Model Context Protocol)?
+
+El "USB-C" de la IA: un protocolo abierto que conecta modelos con herramientas y datos externos de forma estándar. En vez de integrar cada app a mano, todos hablan el mismo idioma.
+
+En este carrusel:
+▫️ La idea central en 1 frase
+▫️ El problema N×M que resuelve
+▫️ Sus piezas: host, cliente y servidor
+▫️ Qué expone un servidor (tools, resources, prompts)
+
+¿Ya probaste algún servidor MCP? Cuéntame cuál 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#MCP #modelcontextprotocol #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #tooling

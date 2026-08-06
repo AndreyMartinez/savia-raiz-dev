@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Secretos — NUNCA subir tokens
+.env
+*.token
+
+# Salida generada
+generador_imagenes/salida/
+*.local.png
+
+# Sistema
+.DS_Store
+Thumbs.db

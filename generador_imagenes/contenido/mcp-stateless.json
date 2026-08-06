@@ -1,0 +1,61 @@
+{
+  "slug": "mcp-stateless",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "NOVEDAD · MCP / TOOLING",
+      "title": "MCP se vuelve stateless",
+      "sub": "La revisión más grande del protocolo desde su lanzamiento."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "LA IDEA",
+      "h": "Adiós a las sesiones",
+      "body": "La spec 2026-07-28 elimina el handshake initialize y el Mcp-Session-Id. Cada request ahora es independiente y trae su propio contexto en _meta: cualquier instancia del servidor puede atenderlo."
+    },
+    {
+      "kind": "list",
+      "num": "03",
+      "kicker": "POR QUÉ IMPORTA",
+      "h": "El problema que resuelve",
+      "items": [
+        ["Antes:", "sticky sessions, session store compartido, deep packet inspection en el gateway."],
+        ["Ahora:", "un servidor MCP remoto corre detrás de un load balancer round-robin plano."],
+        ["Resultado:", "escala como cualquier servicio cloud-native."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "QUÉ SE AGREGA",
+      "h": "Tres piezas nuevas",
+      "items": [
+        ["MCP Apps:", "interfaces HTML del servidor en iframes sandboxeados (SEP-1865)."],
+        ["Tasks:", "pasa de experimental a extensión independiente, con handles de tarea."],
+        ["Auth:", "6 SEPs alinean el protocolo con OAuth 2.0 y OpenID Connect."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "CRONOGRAMA",
+      "h": "Fechas clave",
+      "items": [
+        ["21 may 2026:", "release candidate bloqueado."],
+        ["28 jul 2026:", "especificación final."],
+        ["Después:", "10 semanas de validación para SDKs Tier 1 (Python, TS, Go, C#)."]
+      ],
+      "foot": "Fuente oficial: blog.modelcontextprotocol.io"
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "MCP deja de ser stateful: ahora escala como cualquier API cloud-native, sin perder tools, resources ni prompts.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@savia.raiz"]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "gpt-5-6-recorte-precios",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "PRECIOS · IA",
+      "title": "OpenAI le bajó el precio a GPT-5.6",
+      "sub": "Luna cuesta 80% menos que antes — y Sol estrena un modo más rápido."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "EL ANUNCIO",
+      "h": "Toda la familia, más barata",
+      "body": "OpenAI recortó los precios de API de GPT-5.6 el 30 de julio de 2026: Luna y Terra bajan de precio, Sol mantiene el suyo pero estrena \"Fast mode\". La empresa lo enmarca como avanzar la frontera precio-rendimiento, mientras las compañías se vuelven más sensibles al costo por token."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EL RECORTE",
+      "h": "No todos los modelos bajan igual",
+      "unit": "%",
+      "max": 80,
+      "bars": [
+        {"label": "Luna", "value": 80, "note": "el más grande de los tres"},
+        {"label": "Terra", "value": 20, "note": "uso general"},
+        {"label": "Sol", "value": 0, "note": "precio igual, gana Fast mode"}
+      ],
+      "foot": "Fuente oficial: openai.com, 30 jul 2026"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "PRECIOS EN NÚMEROS",
+      "h": "Por millón de tokens (in/out)",
+      "items": [
+        ["Luna:", "$0.20 / $1.20 — el más rápido y económico."],
+        ["Terra:", "$2 / $12 — el equilibrado para uso diario."],
+        ["Sol:", "$5 / $30 — sin cambios, el más potente."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "LO NUEVO EN SOL",
+      "h": "Fast mode reemplaza a Priority",
+      "items": [
+        ["Qué hace:", "hasta 2.5× la velocidad estándar, al doble de precio."],
+        ["Cuándo usar Luna:", "clasificar, triage, cambios de código bien definidos."],
+        ["Cuándo usar Sol:", "tareas complejas donde la velocidad importa más que el costo."]
+      ]
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "OpenAI apuesta a que el volumen se mueva a Luna: más barato abajo, más rápido arriba.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@savia.raiz"]
+    }
+  ]
+}

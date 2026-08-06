@@ -1,0 +1,64 @@
+{
+  "slug": "mcp-enterprise-auth",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "NOVEDAD · MCP / TOOLING",
+      "title": "MCP ya se autentica como empresa",
+      "sub": "Un solo login para todos tus servidores MCP conectados."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "LA IDEA",
+      "h": "Login centralizado, no por servidor",
+      "body": "La spec 2026-07-28 estabiliza Enterprise-Managed Authorization: las organizaciones administran de forma centralizada quién accede a qué servidor MCP, y cada usuario inicia sesión una sola vez en vez de autenticarse servidor por servidor."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EN NÚMEROS",
+      "h": "MCP ya no es un experimento",
+      "unit": "M",
+      "max": 1000,
+      "bars": [
+        {"label": "SDK TypeScript (total)", "value": 1000, "note": "descargas totales acumuladas"},
+        {"label": "SDK Python (total)", "value": 1000, "note": "descargas totales acumuladas"},
+        {"label": "SDKs Tier 1 (mensual)", "value": 500, "note": "descargas cada mes, combinadas"}
+      ],
+      "foot": "Fuente oficial: blog.modelcontextprotocol.io"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "QUIÉN LO ADOPTA",
+      "h": "Ya no es solo Anthropic",
+      "items": [
+        ["Anthropic:", "primer adoptante de la extensión, ya en producción."],
+        ["Microsoft y Okta:", "suman su capa de identidad empresarial al protocolo."],
+        ["Servidores MCP:", "un número creciente la integra para acceso corporativo."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "QUÉ CAMBIA EN LA PRÁCTICA",
+      "h": "Menos fricción, más control",
+      "items": [
+        ["Antes:", "cada servidor MCP pedía su propio login y sus propias credenciales."],
+        ["Ahora:", "un solo inicio de sesión da acceso a todos los servidores conectados."],
+        ["Además:", "Dynamic Client Registration se deprecó en favor de CIMD."]
+      ],
+      "foot": "Fuente oficial: blog.modelcontextprotocol.io"
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "MCP pasó de protocolo experimental a infraestructura de empresa: login centralizado y SDKs que ya superan los mil millones de descargas.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@savia.raiz"]
+    }
+  ]
+}
