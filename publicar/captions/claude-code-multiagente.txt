@@ -1,0 +1,15 @@
+🤝 Claude Code ya trabaja en equipo: subagentes, sesiones que se hablan y GitLab nativo
+
+La v2.1.232 activa por defecto subagent_type: "fork" — los subagentes heredan toda la conversación y el caché de prompt en vez de arrancar desde cero. Súmale menciones con @ para hablarle directo a otra sesión, y soporte de primera para GitLab en el marketplace.
+
+En este carrusel:
+▫️ Qué cambia con el forking de subagentes por defecto
+▫️ Cómo mencionar otra sesión con @ y SendMessage
+▫️ La redacción automática de nueve familias de tokens de GitLab
+▫️ Por qué importa si ya trabajas con varios agentes a la vez
+
+¿Ya usas varias sesiones de Claude Code en paralelo? Cuéntame cómo las coordinas 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#ClaudeCode #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #tooling #Anthropic

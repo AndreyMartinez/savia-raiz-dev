@@ -1,0 +1,57 @@
+{
+  "slug": "openai-dots",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "AGENTES · IA",
+      "title": "Tu agente ya no espera tu mensaje",
+      "sub": "OpenAI lanzó los dots: viven en la nube, tienen su propio computador y siguen trabajando sin ti."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "EL LANZAMIENTO",
+      "h": "Qué es un dot",
+      "body": "OpenAI los presentó el 29 de septiembre de 2026, en su DevDay. Cada dot corre sobre GPT-6 Astra y tiene su propio computador en la nube, con navegador, separado de tus dispositivos y de tus sesiones. Sigue trabajando aunque apagues el tuyo."
+    },
+    {
+      "kind": "list",
+      "num": "03",
+      "kicker": "CÓMO FUNCIONA",
+      "h": "No es un chat con memoria",
+      "items": [
+        ["Recuerda:", "mantiene el contexto entre sesiones, no empieza de cero cada vez."],
+        ["Se adelanta:", "investiga en tus apps conectadas antes de que preguntes."],
+        ["Sabe cuándo parar:", "avanza en paralelo y te busca solo cuando hace falta tu criterio."]
+      ]
+    },
+    {
+      "kind": "text",
+      "num": "04",
+      "kicker": "QUÉ LE DELEGAS",
+      "h": "De la tarea al encargo",
+      "body": "El cambio no es más potencia, es el tipo de pedido. En vez de \"resume este archivo\", le entregas algo continuo: vigilar los comentarios de los clientes, repetir el análisis cuando lleguen datos nuevos, mantener un sistema en pie."
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "LOS CONTROLES",
+      "h": "Tú decides cuánta correa",
+      "items": [
+        ["Tres modos:", "que siga solo, que pregunte antes, o que te devuelva el control."],
+        ["Revisión previa:", "lo que toca cuentas o comparte información pasa por un chequeo."],
+        ["Dónde está:", "Pro, Business y Enterprise en beta, fuera de Europa, Reino Unido y Suiza."]
+      ],
+      "foot": "Fuente oficial: openai.com, 29 sep 2026"
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "El salto no es un modelo más listo: es que el agente pasa de contestar mensajes a cargar con una responsabilidad, y tu trabajo se corre a decidir qué delegas y qué revisas.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@saviaraiz.dev"]
+    }
+  ]
+}

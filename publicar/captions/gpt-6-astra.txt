@@ -1,0 +1,15 @@
+🛰️ GPT-6 Astra: OpenAI saturó sus propios benchmarks
+
+Salió el 3 de septiembre de 2026 y es el modelo que OpenAI llama "el más inteligente y alineado del mundo". En ARC-AGI-3 marca 99.9% y en FrontierMath Tier 4 llega a 97.6% — no es que gane por poco, es que ya casi no queda techo que subir.
+
+En este carrusel:
+▫️ Qué salió, cuándo y para qué está pensado
+▫️ Los benchmarks en un gráfico: ARC-AGI-3, FrontierMath T4 y OSWorld 2.0
+▫️ Dónde se nota: ~47% menos tiempo por tarea, un tercio de los tokens de Fable 5.1, alucinaciones del 92% al 51%
+▫️ Ficha técnica: $10/$50 por millón de tokens, 1M de contexto y fast mode
+
+La letra pequeña: cuesta 2.5× más que GPT-5.6 Sol. ¿Lo pagarías por esa velocidad? 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#GPT6 #OpenAI #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #machinelearning

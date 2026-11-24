@@ -1,8 +1,17 @@
 {
+  "claude-code-multiagente": "cian",
+  "claude-haiku-5-5": "blanco",
   "gpt-5-6-recorte-precios": "indigo",
+  "gpt-6-astra": "blanco",
+  "gpt-6-sol-luna": "esmeralda",
+  "ia-ciberguerra": "vino",
   "mcp": "esmeralda",
   "mcp-enterprise-auth": "vino",
   "mcp-stateless": "cian",
+  "nextjs-16-4": "cian",
+  "openai-dots": "vino",
   "openai-hugging-face-breach": "vino",
-  "opus-5": "indigo"
+  "opus-5": "indigo",
+  "opus-5-5": "indigo",
+  "react-compiler-rust": "blanco"
 }

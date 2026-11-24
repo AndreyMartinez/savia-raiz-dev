@@ -1,0 +1,17 @@
+🏎️ Tu app de Next.js acaba de adelgazar sin que tocaras una línea
+
+Next.js 16.4 salió el 6 de octubre y trae mejoras activadas por default: menos disco, menos memoria, builds más rápidos. Y Cache Components —el modelo de caché que antes era opcional— ya es la recomendación oficial para proyectos nuevos.
+
+En este carrusel:
+▫️ Los tres números: -20 a -25% de caché en disco, -30% de memoria del compilador en Rust, -15% de tiempo de compilación
+▫️ Cache Components, activado por default en create-next-app
+▫️ Agent feedback: tu agente de IA puede reportar fricción directo al equipo de Next.js (con tu aprobación antes de enviarlo)
+▫️ next upgrade --agent, para que tu agente actualice la app solo
+
+¿Ya estás en Next.js 16.4? Cuéntame 👇
+Guarda esto 🔖 para cuando actualices tu proyecto, y mándaselo a quien sigue en una versión vieja de Next.js — le ahorras horas de migración leyendo el changelog.
+
+Fuente oficial: nextjs.org/blog/next-16-4
+
+—
+#NextJS #React #Turbopack #webdev #frontend #desarrolloweb #programacion #devs #softwaredev #programador #aprenderaprogramar #JavaScript

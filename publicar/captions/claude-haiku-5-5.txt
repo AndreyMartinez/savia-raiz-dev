@@ -1,0 +1,17 @@
+🖱️ La IA de centavos ya sabe usar una computadora
+
+Anthropic lanzó Claude Haiku 5.5 el 7 de octubre: su modelo más chico, más rápido y más barato. Y el salto no es solo de precio: en OSWorld 2.1, una prueba de manejar una computadora real, pasó de 15.7% a 72.4% respecto a Haiku 4.5.
+
+En este carrusel:
+▫️ Los tres saltos: OSWorld 15.7% → 72.4%, leer gráficos 6.4% → 46.4%, terminal 0.0% → 39.2%
+▫️ El precio: $0.10 de entrada y $0.50 de salida por millón de tokens (prompts de hasta 100k), contra $1.00 y $5.00 de Haiku 4.5
+▫️ Lo honesto: en promedio cuesta alrededor de 75% menos, no 90%, porque usa algo más de tokens por tarea
+▫️ Cuándo NO usarlo: para programación agéntica compleja, Sonnet 5.5 y Opus 5.5 siguen siendo mejores
+
+¿Para qué tarea de tu día pondrías un subagente así de barato? Cuéntame 👇
+Mándaselo a quien todavía paga modelo grande para resumir o clasificar — le puede bajar la factura de la API este mismo mes. Y guárdalo 🔖 para cuando elijas modelo.
+
+Fuente oficial: anthropic.com/claude-haiku-5-5
+
+—
+#Claude #Anthropic #IA #inteligenciaartificial #LLM #agentesIA #devs #programacion #softwaredev #programador #desarrolloweb #IAgenerativa

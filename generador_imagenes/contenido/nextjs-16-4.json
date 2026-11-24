@@ -1,0 +1,60 @@
+{
+  "slug": "nextjs-16-4",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "NEXT.JS · DEV",
+      "title": "Tu app web acaba de adelgazar sin que tocaras una línea",
+      "sub": "Las ganancias ya vienen activadas por default en el próximo build."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "QUÉ PASÓ",
+      "h": "Next.js 16.4 ya salió",
+      "body": "El framework de React más usado para sitios y apps lanzó una actualización completa: compilación más liviana, bundles más chicos, y Cache Components —el modelo de caché que antes era opcional— ya es la recomendación por default para proyectos nuevos."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EN NÚMEROS",
+      "h": "Menos disco, menos memoria, menos espera",
+      "unit": "%",
+      "max": 35,
+      "bars": [
+        {"label": "Caché de Turbopack en disco", "value": 25, "vlabel": "20-25%", "note": "menos espacio, sin configurar nada"},
+        {"label": "Memoria del compilador en Rust", "value": 30, "note": "al optimizar componentes de React"},
+        {"label": "Tiempo de compilación", "value": 15, "note": "del mismo compilador experimental"}
+      ],
+      "foot": "Fuente oficial: nextjs.org/blog/next-16-4"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "LO MÁS NUEVO",
+      "h": "Tu agente de código ya puede reportar fricción",
+      "items": [
+        ["Si tropieza, lo anota:", "mientras tu agente de IA programa o actualiza tu app, junta los errores confusos o atajos que tuvo que usar."],
+        ["Tú decides si se manda:", "prepara un borrador de reporte, pero nada sale hasta que tú apruebas enviarlo."],
+        ["Nada sensible sale:", "sus instrucciones le piden omitir código fuente, logs y secretos del proyecto."]
+      ],
+      "foot": "Experimental, activado por default en apps nuevas"
+    },
+    {
+      "kind": "text",
+      "num": "05",
+      "kicker": "POR QUÉ IMPORTA",
+      "h": "El framework empieza a actualizarse solo",
+      "body": "El nuevo next upgrade --agent deja que tu agente de código lea el changelog, aplique los cambios y verifique que tu app sigue funcionando, sin que tú leas una guía de migración. Junto con el reporte automático, Next.js cierra un ciclo que antes dependía de que alguien abriera un issue en GitHub."
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "Next.js 16.4 trae menos peso y más velocidad por default, y deja que tu agente actualice la app y reporte la fricción por ti.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@saviaraiz.dev"]
+    }
+  ]
+}

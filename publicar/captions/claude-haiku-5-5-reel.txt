@@ -1,0 +1,11 @@
+🖱️ El modelo más barato de Anthropic pasó de 15.7% a 72.4% usando una computadora real
+
+▫️ Claude Haiku 5.5, lanzado el 7 de octubre
+▫️ $0.10 / $0.50 por millón de tokens (prompts de hasta 100k)
+▫️ Alrededor de 75% más barato de correr que Haiku 4.5, en promedio
+▫️ Para lo complejo, Sonnet 5.5 y Opus 5.5 siguen ganando
+
+Fuente oficial: anthropic.com/claude-haiku-5-5
+
+—
+#Claude #Anthropic #IA #agentesIA #devs #programacion

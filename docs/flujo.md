@@ -27,9 +27,12 @@ Estados: Por revisar → Idea → En carrusel → Publicado.
 Cada 3 días se elige un tema del inbox y se convierte en carrusel:
 
 1. Escribe el contenido en `generador_imagenes/contenido/<slug>.json`.
-2. Genera imágenes:
-   - Retoque visual → abre `generador_html/` y descarga.
-   - Por lotes → `python generar.py contenido/<slug>.json`.
+2. Genera todo con `./.venv/bin/python3 generador_imagenes/generar.py generador_imagenes/contenido/<slug>.json`: produce los 6
+   PNG, el HTML de revisión (para retoque visual) y el Reel en
+   `generador_reel/<slug>.mp4` (Ken Burns + transición de deslizamiento +
+   música de fondo sintetizada), automáticamente. Requiere `ffmpeg`
+   (`brew install ffmpeg`); si no está instalado, se generan igual los PNG
+   y el HTML y se avisa que el Reel se omitió.
 3. Escribe el caption en `publicar/captions/<slug>.txt`.
 
 ### Estructura recomendada de un carrusel

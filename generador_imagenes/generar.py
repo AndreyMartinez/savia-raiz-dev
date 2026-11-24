@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Genera un carrusel de Instagram (6 PNG de 1080x1080) a partir de un archivo
+Genera un carrusel de Instagram (6 PNG de 1080x1350, formato 4:5) a partir de un archivo
 de contenido JSON. El diseño (marca Savia Raíz) está separado del contenido.
 
 Uso:
@@ -13,24 +13,35 @@ fondo oscuro automáticamente.
 import os
 import sys
 import json
+import shutil
 import argparse
+import subprocess
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
-from paletas import INK as INK_HEX, MUTED as MUTED_HEX, hex_a_rgb, elegir_paleta
+from paletas import (
+    INK as INK_HEX, MUTED as MUTED_HEX, BODY as BODY_HEX, STRONG as STRONG_HEX,
+    hex_a_rgb, elegir_paleta,
+)
 
-W = H = 1080
+# 4:5 (1080x1350) — Instagram muestra este formato a altura completa en el
+# feed; el cuadrado cede ~25% de pantalla y con ello tiempo de visualizacion.
+W, H = 1080, 1350
 
 # ---- paleta de marca ----
-# INK/MUTED (texto) son fijos; BG/ACCENT/ACCENT2 se asignan por carrusel en
-# main(), según la paleta que le toque al slug (ver paletas.py).
-INK     = hex_a_rgb(INK_HEX)
-MUTED   = hex_a_rgb(MUTED_HEX)
+# Todo (fondo, acentos y los 4 tonos de texto) se asigna por carrusel en
+# main(), según la paleta que le toque al slug (ver paletas.py). Los HEX de
+# arriba son solo el valor por defecto (paletas oscuras) para paletas que no
+# definan su propia jerarquía de texto.
 BG      = None
 ACCENT  = None
 ACCENT2 = None
+INK     = hex_a_rgb(INK_HEX)
+MUTED   = hex_a_rgb(MUTED_HEX)
+BODY    = hex_a_rgb(BODY_HEX)
+STRONG  = hex_a_rgb(STRONG_HEX)
 
 LOGO_PATH = os.path.join(HERE, "..", "assets", "logo.png")
 
@@ -72,18 +83,26 @@ F_BODY    = _font(SANS, 35)
 F_BODYB   = _font(BOLD, 35)
 F_ONE     = _font(BOLD, 46)
 F_FOOT    = _font(MONO, 24)
+F_SUB     = _font(SANS, 42)
 F_SWIPE   = _font(MONO, 27)
 F_RAIL    = _font(MONO, 20)
 F_NUMBIG  = _font(BOLD, 46)
 F_NUMSM   = _font(MONO, 22)
+
+# Altura fija del encabezado en las diapositivas de contenido: mantiene el
+# ritmo al deslizar. La portada va centrada aparte (no lleva kicker).
+ANCLA  = 230
 
 RAIL_X = 118
 CX     = 176
 CW     = W - CX - 84
 
 
-def cargar_logo_claro():
-    """Convierte el logo negro-sobre-blanco en blanco-sobre-transparente."""
+def cargar_logo_recoloreado():
+    """Extrae la silueta del logo negro-sobre-blanco (por luminancia) y la
+    recolorea con el INK activo — blanco/claro para paletas oscuras, oscuro
+    para la paleta "blanco". Se llama en main(), después de fijar INK según
+    la paleta del carrusel, no al importar el módulo."""
     im = Image.open(LOGO_PATH).convert("RGBA")
     arr = np.array(im).astype(np.float32)
     lum = 0.299 * arr[:, :, 0] + 0.587 * arr[:, :, 1] + 0.114 * arr[:, :, 2]
@@ -95,7 +114,7 @@ def cargar_logo_claro():
     return w.crop(w.getbbox())
 
 
-LOGO = cargar_logo_claro()
+LOGO = None
 
 
 def background():
@@ -110,7 +129,7 @@ def background():
             arr[:, :, i] += color[i] * fac
 
     glow(880, -40, 780, ACCENT, 0.16)
-    glow(-40, 1120, 820, ACCENT2, 0.14)
+    glow(-40, H + 40, 820, ACCENT2, 0.14)
     img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
 
     grid = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -151,6 +170,25 @@ def wrap(draw, text, font, width):
     return lines
 
 
+def alto_para(d, text, font, width, lh):
+    """Alto que ocupara el parrafo, sin dibujarlo. Permite centrar el bloque
+    de contenido verticalmente: en 4:5 sobra alto y anclar todo arriba deja
+    un hueco muerto en el medio."""
+    return len(wrap(d, text, font, width)) * lh
+
+
+def centrar(top, bot, alto):
+    """Y inicial para un bloque de `alto` centrado entre top y bot."""
+    return top + max((bot - top - alto) // 2, 0)
+
+
+def anclar(bot, alto, ancla=ANCLA, top=150):
+    """Y inicial del bloque de contenido. Se ancla siempre a la misma altura
+    para que el encabezado no salte al deslizar entre diapositivas, y solo
+    sube si el bloque no cabria (contenido denso)."""
+    return max(top, min(ancla, bot - alto))
+
+
 def draw_para(d, text, font, fill, x, y, width, lh):
     for ln in wrap(d, text, font, width):
         d.text((x, y), ln, font=font, fill=fill)
@@ -172,7 +210,7 @@ def draw_mixed(d, segs, x, y, width, lh):
     return cyp + lh
 
 
-def kicker(d, txt, y=120):
+def kicker(d, txt, y=150):
     d.line([(CX, y + 14), (CX + 34, y + 14)], fill=ACCENT, width=3)
     d.text((CX + 48, y), txt, font=F_KICKER, fill=ACCENT)
     return y + 58
@@ -205,71 +243,88 @@ def render(slide, total):
     k = slide["kind"]
 
     if k == "cover":
-        d.text((CX, 150), slide["eyebrow"], font=F_EYEBROW, fill=MUTED)
-        y = draw_para(d, slide["title"], F_TITLE, INK, CX, 300, CW, 104)
-        draw_para(d, slide["sub"], F_BODY, MUTED, CX, y + 26, CW - 40, 48)
+        d.text((CX, 190), slide["eyebrow"], font=F_EYEBROW, fill=MUTED)
+        alto = (alto_para(d, slide["title"], F_TITLE, CW, 104)
+                + 30 + alto_para(d, slide["sub"], F_SUB, CW - 40, 56))
+        y = centrar(300, H - 210, alto)
+        y = draw_para(d, slide["title"], F_TITLE, INK, CX, y, CW, 104)
+        draw_para(d, slide["sub"], F_SUB, MUTED, CX, y + 30, CW - 40, 56)
         d.text((CX, H - 150), "Desliza  \u2192", font=F_SWIPE, fill=ACCENT)
 
     elif k == "text":
-        y = kicker(d, slide["kicker"])
+        alto = (58 + alto_para(d, slide["h"], F_H, CW, 72) + 8
+                + 30 + alto_para(d, slide["body"], F_BODY, CW, 52))
+        y = kicker(d, slide["kicker"], anclar(H - 150, alto))
         y = draw_para(d, slide["h"], F_H, INK, CX, y + 8, CW, 72)
-        draw_para(d, slide["body"], F_BODY, (211, 220, 240), CX, y + 30, CW, 52)
+        draw_para(d, slide["body"], F_BODY, BODY, CX, y + 30, CW, 52)
 
     elif k == "list":
-        y = kicker(d, slide["kicker"])
+        alto = 58 + alto_para(d, slide["h"], F_H, CW, 72) + 8 + 44
+        for label, rest in slide["items"]:
+            alto += alto_para(d, label + " " + rest, F_BODY, CW - 46, 50) + 22
+        reservado = 190 if slide.get("foot") else 150
+        y = kicker(d, slide["kicker"], anclar(H - reservado, alto))
         y = draw_para(d, slide["h"], F_H, INK, CX, y + 8, CW, 72)
         y += 44
         for label, rest in slide["items"]:
             bullet(d, CX, y + 12)
-            segs = [(label + " ", F_BODYB, (255, 255, 255)), (rest, F_BODY, (211, 220, 240))]
+            segs = [(label + " ", F_BODYB, STRONG), (rest, F_BODY, BODY)]
             y = draw_mixed(d, segs, CX + 46, y, CW - 46, 50) + 22
         if slide.get("foot"):
             d.text((CX, H - 132), slide["foot"], font=F_FOOT, fill=ACCENT)
 
     elif k == "chart":
-        y = kicker(d, slide["kicker"])
+        bars = slide["bars"]
+        bar_h = 34
+        alto = (58 + alto_para(d, slide["h"], F_H, CW, 72) + 8 + 46
+                + len(bars) * (46 + bar_h + 12 + 30 + 28))
+        reservado = 190 if slide.get("foot") else 150
+        y = kicker(d, slide["kicker"], anclar(H - reservado, alto))
         y = draw_para(d, slide["h"], F_H, INK, CX, y + 8, CW, 72)
         y += 46
-        bars = slide["bars"]
         maxv = slide.get("max") or max(b["value"] for b in bars)
         unit = slide.get("unit", "")
-        bar_h = 34
         for b in bars:
-            d.text((CX, y), b["label"], font=F_BODYB, fill=(255, 255, 255))
+            d.text((CX, y), b["label"], font=F_BODYB, fill=STRONG)
             y += 46
             draw_bar(img, CX, y, CW, bar_h, b["value"] / maxv)
-            note = f'{b["value"]:g}{unit}'
+            # `vlabel` reemplaza la cifra impresa sin cambiar el largo de la
+            # barra: sirve para rangos ("20-25%"), aproximados o multiplos.
+            note = b.get("vlabel") or f'{b["value"]:g}{unit}'
             if b.get("note"):
-                note += f'  ·  {b["note"]}'
+                note += f'  \u00b7  {b["note"]}'
             d.text((CX, y + bar_h + 12), note, font=F_FOOT, fill=MUTED)
             y += bar_h + 12 + 30 + 28
         if slide.get("foot"):
             d.text((CX, H - 132), slide["foot"], font=F_FOOT, fill=ACCENT)
 
     elif k == "end":
-        y = kicker(d, slide["kicker"])
+        alto = (58 + alto_para(d, slide["h"], F_H, CW, 72) + 8
+                + 30 + alto_para(d, slide["one"], F_ONE, CW - 20, 62))
+        y = kicker(d, slide["kicker"], anclar(H - 396, alto))
         y = draw_para(d, slide["h"], F_H, INK, CX, y + 8, CW, 72)
-        y = draw_para(d, slide["one"], F_ONE, (255, 255, 255), CX, y + 30, CW - 20, 62)
+        y = draw_para(d, slide["one"], F_ONE, STRONG, CX, y + 30, CW - 20, 62)
         d.line([(CX, H - 336), (W - 84, H - 336)], fill=(120, 150, 220, 70), width=2)
         seal_h = 210
         seal = LOGO.resize((int(LOGO.width * seal_h / LOGO.height), seal_h), Image.LANCZOS)
         sy = H - 262
         img.alpha_composite(seal, (CX, sy))
         tx = CX + seal.width + 44
-        d.text((tx, sy + 42), "Guarda este post", font=F_BODY, fill=(211, 220, 240))
-        d.text((tx, sy + 96), "Un concepto cada 3 d\u00edas", font=F_BODY, fill=(211, 220, 240))
+        d.text((tx, sy + 42), "Guarda este post", font=F_BODY, fill=BODY)
+        d.text((tx, sy + 96), "Un concepto cada 3 d\u00edas", font=F_BODY, fill=BODY)
         d.text((tx, sy + 152), slide["cta"][-1], font=F_FOOT, fill=ACCENT)
 
     return img.convert("RGB")
 
 
 def main():
-    global BG, ACCENT, ACCENT2
+    global BG, ACCENT, ACCENT2, INK, MUTED, BODY, STRONG, LOGO
 
     ap = argparse.ArgumentParser(description="Genera un carrusel PNG desde un JSON de contenido.")
     ap.add_argument("contenido", help="Ruta al archivo JSON de contenido")
     ap.add_argument("--salida", default=None, help="Carpeta de salida (por defecto ./salida/<slug>)")
     ap.add_argument("--sin-html", action="store_true", help="No generar el HTML de revisión")
+    ap.add_argument("--sin-reel", action="store_true", help="No generar el Reel de video")
     args = ap.parse_args()
 
     with open(args.contenido, encoding="utf-8") as f:
@@ -278,6 +333,11 @@ def main():
     slug = data.get("slug", "carrusel")
     paleta = elegir_paleta(slug)
     BG, ACCENT, ACCENT2 = hex_a_rgb(paleta["bg"]), hex_a_rgb(paleta["accent"]), hex_a_rgb(paleta["accent2"])
+    INK    = hex_a_rgb(paleta.get("ink", INK_HEX))
+    MUTED  = hex_a_rgb(paleta.get("muted", MUTED_HEX))
+    BODY   = hex_a_rgb(paleta.get("body", BODY_HEX))
+    STRONG = hex_a_rgb(paleta.get("strong", STRONG_HEX))
+    LOGO   = cargar_logo_recoloreado()
 
     out = args.salida or os.path.join(HERE, "salida", slug)
     os.makedirs(out, exist_ok=True)
@@ -294,6 +354,18 @@ def main():
         import generar_html
         html_path = generar_html.generar(args.contenido, paleta=paleta)
         print(f"Revisión HTML: {html_path}")
+
+    if not args.sin_reel:
+        if shutil.which("ffmpeg") is None:
+            print("Reel omitido: instala ffmpeg (brew install ffmpeg) para generarlo automáticamente.")
+        else:
+            sys.path.insert(0, os.path.join(HERE, "..", "generador_reel"))
+            import generar_reel
+            try:
+                reel_path = generar_reel.generar(args.contenido)
+                print(f"Reel: {reel_path}")
+            except subprocess.CalledProcessError as e:
+                print(f"Reel omitido: ffmpeg falló ({e}).")
 
 
 if __name__ == "__main__":

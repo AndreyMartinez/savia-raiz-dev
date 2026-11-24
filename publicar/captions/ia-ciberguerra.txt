@@ -1,0 +1,17 @@
+🛡️ La IA ya está en la primera línea de la ciberguerra
+
+OpenAI lanzó GPT-5.6-Cyber, un modelo construido sobre GPT-5.6 Sol y entrenado solo para ciberseguridad: investigación de vulnerabilidades, revisión de código, respuesta a incidentes. No está en ChatGPT — vive dentro de Daybreak, su programa de acceso controlado (niveles Blue y Red), y hoy solo lo usan socios de confianza como Accenture, IBM, CrowdStrike y Cloudflare.
+
+En este carrusel:
+▫️ Qué es GPT-5.6-Cyber y por qué OpenAI lo restringe tanto
+▫️ Los números: 97% en Capture the Flag, 83% en Cyber Range
+▫️ Blue vs. Red — los dos niveles de acceso de Daybreak
+▫️ Por qué esto no es paranoia: los ataques también corren con IA
+
+La misma advertencia de OpenAI: los actores de amenaza van a usar IA para atacar a "velocidad y escala sin precedentes". La defensa apenas está poniéndose al día.
+
+¿Te preocupa más la IA como arma o como escudo? 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#OpenAI #ciberseguridad #IA #inteligenciaartificial #cybersecurity #hacking #infosec #devs #tecnologia #machinelearning #GPT56

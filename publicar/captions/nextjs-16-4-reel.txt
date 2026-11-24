@@ -1,0 +1,11 @@
+🏎️ Next.js 16.4 ya salió — y tu app pesa menos sin que hagas nada
+
+▫️ -25% de caché en disco de Turbopack
+▫️ -30% de memoria del compilador en Rust
+▫️ -15% de tiempo de compilación
+▫️ Tu agente de IA ya puede reportar fricción y actualizar la app solo, con tu aprobación
+
+Fuente oficial: nextjs.org/blog/next-16-4
+
+—
+#NextJS #React #Turbopack #webdev #programacion #devs

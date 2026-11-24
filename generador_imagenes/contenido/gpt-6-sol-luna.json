@@ -1,0 +1,63 @@
+{
+  "slug": "gpt-6-sol-luna",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "LANZAMIENTO · IA",
+      "title": "La frontera ahora cuesta centavos",
+      "sub": "GPT-6 Sol y Luna: casi todo lo que hace Astra, a una fracción del precio por tarea."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "EL LANZAMIENTO",
+      "h": "Tres semanas después de Astra",
+      "body": "OpenAI lanzó GPT-6 Sol y Luna el 22 de septiembre de 2026. Están construidos sobre los mismos avances de Astra, pero afinados para el trabajo diario a escala: llegan a la API, a ChatGPT Work y a Codex, y Luna aparece incluso en la app de escritorio para los planes Free y Go."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EN NÚMEROS",
+      "h": "Precio de entrada por millón de tokens",
+      "unit": " USD",
+      "max": 10,
+      "bars": [
+        {"label": "GPT-6 Astra", "value": 10, "note": "salida: $50 por millón"},
+        {"label": "GPT-6 Sol", "value": 2, "note": "salida: $10 por millón"},
+        {"label": "GPT-6 Luna", "value": 0.1, "note": "salida: $0.50 por millón"}
+      ],
+      "foot": "Fuente oficial: openai.com, 22 sep 2026"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "QUÉ COMPRAS CON ESO",
+      "h": "El costo por tarea se desploma",
+      "items": [
+        ["Luna:", "rinde como los modelos de frontera de hace un año, a unos 6 centavos por dólar y casi 9× más rápido."],
+        ["Agents' Last Exam:", "Luna supera a Fable 5 con un costo por tarea ~99% menor, según OpenAI."],
+        ["El recorte:", "la mitad de precio que la generación GPT-5.6, y es permanente, no promoción."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "CÓMO ELEGIR",
+      "h": "Cuál usar y cuándo",
+      "items": [
+        ["Luna:", "el volumen — clasificar, extraer, resumir, cambios de código acotados."],
+        ["Sol:", "el caballo de batalla — agentes, refactors, tareas largas con herramientas."],
+        ["Astra:", "solo cuando la tarea justifique pagar 5× por token."]
+      ]
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "La noticia no es un modelo más inteligente: es que la inteligencia útil bajó a la mitad de precio, y casi ningún trabajo real necesita ya el modelo más caro.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@saviaraiz.dev"]
+    }
+  ]
+}

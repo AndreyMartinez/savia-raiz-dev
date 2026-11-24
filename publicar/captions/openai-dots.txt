@@ -1,0 +1,16 @@
+🤖 Tu agente ya no espera tu mensaje
+
+En su DevDay del 29 de septiembre de 2026, OpenAI presentó los dots: agentes persistentes que corren sobre GPT-6 Astra, cada uno con su propio computador en la nube y su navegador, separados de tus dispositivos. Siguen trabajando aunque apagues el tuyo.
+
+En este carrusel:
+▫️ Qué es un dot y en qué se diferencia de un chat con memoria
+▫️ Cómo funciona: recuerda entre sesiones, se adelanta en tus apps conectadas y sabe cuándo buscarte
+▫️ El cambio de fondo: pasas de pedir tareas sueltas a delegar algo continuo
+▫️ Los controles: que siga solo, que pregunte antes o que te devuelva el control — y revisión previa para lo que toca cuentas
+▫️ Dónde está disponible hoy y dónde todavía no
+
+Lo interesante no es que trabaje más rápido, es que ahora hay que decidir qué se le confía. ¿Le delegarías algo que corre sin que lo estés mirando? 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#OpenAI #agentesIA #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #automatizacion

@@ -1,0 +1,174 @@
+{
+  "slug": "claude-haiku-5-5",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "CLAUDE · IA",
+      "title": "La IA de centavos ya sabe usar una computadora",
+      "sub": "El modelo más barato de Anthropic pasó de 15.7% a 72.4% en una prueba de manejar una computadora real."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "QUÉ PASÓ",
+      "h": "Claude Haiku 5.5 ya salió",
+      "body": "Anthropic lanzó Haiku 5.5 el 7 de octubre de 2026. Es su modelo más chico y el más rápido hasta hoy, pensado para tareas de alto volumen: resumir, clasificar, consultar bases de datos o trabajar como subagente de Opus 5.5 y Sonnet 5.5. Es además el primer Haiku con nivel de esfuerzo ajustable."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EN NÚMEROS",
+      "h": "Mismo tamaño, otro nivel",
+      "unit": "%",
+      "max": 80,
+      "bars": [
+        {
+          "label": "OSWorld 2.1 · usar una computadora",
+          "value": 72.4,
+          "note": "Haiku 4.5: 15.7%"
+        },
+        {
+          "label": "Chartography · leer gráficos",
+          "value": 46.4,
+          "note": "Haiku 4.5: 6.4%"
+        },
+        {
+          "label": "Terminal-Bench 4.0 · terminal",
+          "value": 39.2,
+          "note": "Haiku 4.5: 0.0%"
+        }
+      ],
+      "foot": "Fuente oficial: anthropic.com/claude-haiku-5-5"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "EL PRECIO",
+      "h": "Hasta 90% menos por token",
+      "items": [
+        [
+          "Entrada:",
+          "$0.10 por millón de tokens en prompts de hasta 100k. Haiku 4.5 cobraba $1.00."
+        ],
+        [
+          "Salida:",
+          "$0.50 por millón de tokens. Antes eran $5.00."
+        ],
+        [
+          "En la práctica:",
+          "correrlo cuesta alrededor de 75% menos en promedio, porque gasta algo más de tokens por tarea."
+        ]
+      ],
+      "foot": "Prompts de más de 100k: $0.50 / $2.50"
+    },
+    {
+      "kind": "text",
+      "num": "05",
+      "kicker": "CUÁNDO USARLO",
+      "h": "No reemplaza a los grandes",
+      "body": "La propia Anthropic lo aclara: para programación agéntica compleja, Sonnet 5.5 y Opus 5.5 siguen siendo mejores (Sonnet 5.5 saca 70.6% en Terminal-Bench). Haiku 5.5 brilla en lo acotado y repetitivo que antes salía caro: resumir, compactar contexto, subagentes y automatizar el navegador."
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "Haiku 5.5 cuesta hasta 90% menos por token que su antecesor y ya maneja computadoras y terminales; los modelos grandes siguen para lo complejo.",
+      "cta": [
+        "Guarda este post para tenerlo a mano",
+        "Sígueme: un concepto nuevo cada 3 días",
+        "@saviaraiz.dev"
+      ]
+    }
+  ],
+  "reel": {
+    "estilo": "noticia",
+    "escenas": [
+      {
+        "tipo": "gancho",
+        "kicker": "CLAUDE · IA",
+        "titulo": "La IA de centavos|ya usa una computadora",
+        "texto": "De 15.7% a 72.4% en manejar una computadora real.",
+        "voz": "La inteligencia artificial más barata de Anthropic acaba de pasar de quince a setenta y dos por ciento… en una prueba de manejar una computadora real.",
+        "imagen": "A single very small point of light that casts an enormous beam across a vast empty hall — something tiny doing something huge"
+      },
+      {
+        "tipo": "dato",
+        "kicker": "QUÉ PASÓ",
+        "titulo": "Haiku 5.5 ya salió",
+        "texto": "El modelo más chico y rápido de Anthropic, hecho para tareas de alto volumen.",
+        "voz": "Se llama Haiku cinco punto cinco. Es su modelo más chico y el más rápido hasta hoy: resumir, clasificar, o trabajar como subagente de los modelos grandes.",
+        "imagen": "One compact, dense, intensely concentrated cluster of light, much smaller than the soft diffuse shapes dissolving behind it"
+      },
+      {
+        "tipo": "barras",
+        "kicker": "EN NÚMEROS",
+        "titulo": "Mismo tamaño, otro nivel",
+        "unidad": "%",
+        "max": 80,
+        "barras": [
+          {
+            "label": "Usar una computadora",
+            "valor": 72.4,
+            "antes": 15.7
+          },
+          {
+            "label": "Leer gráficos",
+            "valor": 46.4,
+            "antes": 6.4
+          },
+          {
+            "label": "Trabajar en la terminal",
+            "valor": 39.2,
+            "antes": 0.0
+          }
+        ],
+        "pie": "Fuente oficial: anthropic.com",
+        "voz": "Contra la versión anterior no hay comparación. En leer gráficos pasó de seis a cuarenta y seis. Y en la terminal, de cero… a treinta y nueve.",
+        "imagen": "A swarm of small particles migrating in a long sweeping trail from a sparse scattered cluster toward a dense luminous one"
+      },
+      {
+        "tipo": "lista",
+        "kicker": "EL PRECIO",
+        "titulo": "Hasta 90% menos por token",
+        "items": [
+          [
+            "Entrada:",
+            "$0.10 por millón de tokens, antes $1.00"
+          ],
+          [
+            "Salida:",
+            "$0.50 por millón, antes $5.00"
+          ],
+          [
+            "En la práctica:",
+            "cuesta cerca de 75% menos"
+          ]
+        ],
+        "voz": "Y cuesta hasta noventa por ciento menos por token. En la práctica, correrlo sale como setenta y cinco por ciento más barato.",
+        "imagen": "A cascade of tiny fragments falling from a dense mass at the top and thinning out almost to nothing at the bottom"
+      },
+      {
+        "tipo": "dato",
+        "kicker": "LA LETRA CHICA",
+        "titulo": "No reemplaza a los grandes",
+        "texto": "Para programación compleja, Sonnet 5.5 y Opus 5.5 siguen ganando.",
+        "voz": "Ojo: la propia Anthropic lo aclara. Para programación compleja, los modelos grandes siguen siendo mejores.",
+        "imagen": "Two very different scales side by side: one small sharp precise point in front of a vast soft diffuse mass"
+      },
+      {
+        "tipo": "cierre",
+        "kicker": "EN UNA FRASE",
+        "titulo": "Lo barato ya hace lo que antes solo hacía lo caro.",
+        "cta": [
+          "Guarda este Reel",
+          "Un concepto nuevo cada 3 días"
+        ],
+        "handle": "@saviaraiz.dev",
+        "voz": "Lo barato ya hace lo que antes solo hacía lo caro. Sígueme si te sirven estas cosas.",
+        "imagen": "A wide calm expanse with a single small bright point low in the frame and soft rays opening upward from it"
+      }
+    ]
+  }
+}

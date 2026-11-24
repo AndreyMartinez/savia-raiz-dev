@@ -1,0 +1,60 @@
+{
+  "slug": "ia-ciberguerra",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "CIBERSEGURIDAD · IA",
+      "title": "La IA ya pelea la ciberguerra",
+      "sub": "OpenAI lanzó un modelo entrenado solo para eso — y casi nadie puede usarlo."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "EL ANUNCIO",
+      "h": "GPT-5.6-Cyber entra en escena",
+      "body": "OpenAI construyó GPT-5.6-Cyber sobre GPT-5.6 Sol, especializado en investigación de vulnerabilidades, revisión de código y respuesta a incidentes. No está en ChatGPT: solo llega a socios de confianza dentro del programa Daybreak."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EN NÚMEROS",
+      "h": "Qué tan bien explota fallos",
+      "unit": "%",
+      "max": 100,
+      "bars": [
+        {"label": "Capture the Flag", "value": 97.06, "note": "retos internos de OpenAI"},
+        {"label": "Cyber Range · Sol", "value": 83.3, "note": "escenarios superados"},
+        {"label": "Cyber Range · Luna", "value": 61.5, "note": "versión más ligera"}
+      ],
+      "foot": "Fuente: OpenAI Deployment Safety Hub, ago. 2026"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "ACCESO CONTROLADO",
+      "h": "Daybreak, en dos niveles",
+      "items": [
+        ["Blue:", "punto de entrada — respuesta a incidentes, malware, parches."],
+        ["Red:", "acceso amplio — pruebas de seguridad, incluye GPT-5.6-Cyber."],
+        ["Clientes:", "Accenture, IBM, CrowdStrike y Cloudflare, entre otros."]
+      ],
+      "foot": "Fuente: TechCrunch, 10 ago. 2026"
+    },
+    {
+      "kind": "text",
+      "num": "05",
+      "kicker": "POR QUÉ AHORA",
+      "h": "El otro lado también usa IA",
+      "body": "\"Los actores de amenaza usarán cada vez más IA para atacar a velocidad y escala sin precedentes, incluso de forma autónoma\", advierte OpenAI. La carrera entre ataque y defensa ya corre con el mismo tipo de modelo."
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "La ciberseguridad dejó de ser solo humana — ahora la pelean modelos, de los dos lados.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@saviaraiz.dev"]
+    }
+  ]
+}

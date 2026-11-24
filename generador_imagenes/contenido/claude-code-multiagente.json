@@ -1,0 +1,61 @@
+{
+  "slug": "claude-code-multiagente",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "NOVEDAD · MCP / TOOLING",
+      "title": "Claude Code ya trabaja en equipo",
+      "sub": "v2.1.232: subagentes que heredan contexto, sesiones que se hablan entre sí, y GitLab nativo."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "LA IDEA",
+      "h": "Subagentes que heredan todo",
+      "body": "Antes, delegar una tarea a un subagente significaba explicarle el contexto desde cero. Con subagent_type: \"fork\" activado por defecto, el subagente hereda toda la conversación y el caché de prompt — y en sesiones interactivas, los que no son de tu equipo corren en segundo plano sin bloquear tu flujo."
+    },
+    {
+      "kind": "list",
+      "num": "03",
+      "kicker": "SESIONES QUE SE HABLAN",
+      "h": "Menciona con @ y listo",
+      "items": [
+        ["Antes:", "para avisarle algo a otra sesión de Claude había que copiar y pegar contexto a mano."],
+        ["Ahora:", "escribe @ en el prompt, menciona la sesión por nombre, y Claude le manda el mensaje con SendMessage."],
+        ["Bonus:", "si el nombre coincide con una sola sesión viva, el mensaje se entrega sin pedir confirmación."]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "GITLAB YA ES CIUDADANO DE PRIMERA",
+      "h": "No solo GitHub",
+      "items": [
+        ["Marketplace:", "URLs de gitlab.com (incluyendo subgrupos anidados) se clonan igual que las de GitHub."],
+        ["Secretos:", "redacción automática para nueve familias de tokens de GitLab (glrt-, gloas-, glagent-, entre otras)."],
+        ["Tokens críticos:", "glpat- y gldt- con acceso enrutable se redactan por completo."]
+      ],
+      "foot": "Fuente oficial: code.claude.com/docs/en/changelog"
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "POR QUÉ IMPORTA",
+      "h": "Para quien ya usa varios agentes",
+      "items": [
+        ["Equipos con GitLab:", "el marketplace y la redacción de secretos ya no son exclusivos de GitHub."],
+        ["Multi-agente real:", "forking + SendMessage hacen que varias sesiones colaboren sin copiar contexto a mano."],
+        ["Menos ruido:", "los subagentes que no son tu equipo corren en background por defecto."]
+      ]
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "Claude Code v2.1.232 hace que los subagentes hereden contexto, las sesiones se hablen por @ + SendMessage, y GitLab funcione como GitHub en el marketplace.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@saviaraiz.dev"]
+    }
+  ]
+}

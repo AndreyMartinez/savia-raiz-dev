@@ -1,0 +1,62 @@
+{
+  "slug": "react-compiler-rust",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "NOVEDAD · DEV / TOOLING",
+      "title": "React Compiler ahora corre en Rust",
+      "sub": "Next.js 16.3 lo mete nativo en Turbopack — y se nota en el build."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "LA IDEA",
+      "h": "Menos vueltas, menos espera",
+      "body": "Hasta ahora, activar React Compiler significaba correrlo vía Babel en Node.js. La versión en Rust corre directo dentro de Turbopack, como código nativo, sin generar y volver a parsear código de por medio."
+    },
+    {
+      "kind": "list",
+      "num": "03",
+      "kicker": "POR QUÉ IMPORTA",
+      "h": "Se acaba el viaje de ida y vuelta",
+      "items": [
+        ["Antes:", "Babel en Node.js compila, genera código, y Turbopack lo vuelve a parsear."],
+        ["Ahora:", "el compilador vive dentro de Turbopack, mismo binario, sin frontera de serialización."],
+        ["Resultado:", "next dev llega antes a una página lista para usar."]
+      ]
+    },
+    {
+      "kind": "chart",
+      "num": "04",
+      "kicker": "EN NÚMEROS",
+      "h": "El build lo siente",
+      "unit": "%",
+      "max": 50,
+      "bars": [
+        {"label": "Cold build", "value": 34, "note": "de next dev a página lista"},
+        {"label": "Warm build", "value": 46, "note": "de next dev a página lista"}
+      ],
+      "foot": "Fuente oficial: nextjs.org/blog/next-16-3-turbopack"
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "CÓMO PROBARLO",
+      "h": "Todavía es experimental",
+      "items": [
+        ["Flag:", "experimental.turbopackRustReactCompiler en next.config.js."],
+        ["Requiere:", "Next.js 16.3 corriendo con Turbopack."],
+        ["Probado en:", "apps grandes como v0, con ganancias de 20-50%."]
+      ]
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "El React Compiler deja de pasar por Babel/Node: corre nativo en Rust dentro de Turbopack, y el build llega hasta 46% más rápido.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@saviaraiz.dev"]
+    }
+  ]
+}

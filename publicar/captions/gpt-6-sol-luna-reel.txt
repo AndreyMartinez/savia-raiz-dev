@@ -1,0 +1,16 @@
+El modelo que usas en producción acaba de quedar caro 💸
+
+OpenAI lanzó GPT-6 Sol y Luna el 22 de septiembre: la capacidad de frontera de Astra, pero afinada para el trabajo diario y a la mitad de precio que la generación anterior. Permanente, no promoción.
+
+Los números:
+▫️ Entrada por millón de tokens: Astra $10 · Sol $2 · Luna $0.10
+▫️ Salida: $50 · $10 · $0.50
+▫️ Luna rinde como la frontera de hace un año, a ~6 centavos por dólar y casi 9× más rápido
+▫️ En Agents' Last Exam supera a Fable 5 con un costo por tarea ~99% menor
+
+Luna para volumen, Sol para agentes y refactors, Astra solo si la tarea lo justifica.
+
+Fuente oficial: openai.com, 22 sep 2026
+
+—
+#GPT6 #OpenAI #IA #programacion #devs #herramientasIA

@@ -1,0 +1,15 @@
+💸 La frontera ahora cuesta centavos
+
+OpenAI lanzó GPT-6 Sol y Luna el 22 de septiembre de 2026, tres semanas después de Astra. Mismo linaje, otro objetivo: traer la capacidad de frontera al trabajo diario a escala, con precios de API a la mitad de la generación GPT-5.6 — y de forma permanente, no como promoción.
+
+En este carrusel:
+▫️ Qué salió, cuándo y dónde está disponible (API, ChatGPT Work, Codex, y Luna hasta en Free y Go)
+▫️ El precio en un gráfico: Astra $10, Sol $2, Luna $0.10 por millón de tokens de entrada
+▫️ Luna rinde como los modelos de frontera de hace un año, a ~6 centavos por dólar y casi 9× más rápido
+▫️ Cuál usar y cuándo: Luna para volumen, Sol como caballo de batalla, Astra solo si la tarea lo justifica
+
+El cálculo de "¿qué modelo pongo en producción?" cambió otra vez. ¿Ya moviste tu carga a un modelo más barato o sigues pagando el tope de gama? 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#GPT6 #OpenAI #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #machinelearning

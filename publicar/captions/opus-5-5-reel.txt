@@ -1,0 +1,14 @@
+⚡ Por primera vez el mejor modelo no es el más caro
+
+▫️ Claude Opus 5.5, lanzado el 22 de septiembre, a menos de dos meses de Opus 5
+▫️ Le gana a Fable 5.1 —el de frontera— en terminal: 66.4% vs 55.8%
+▫️ Contra su propia versión anterior: 74% → 81.8% usando una computadora
+▫️ $4 / $20 por millón de tokens, 20% menos, y caché 60% más barata
+▫️ En la práctica: ~40% menos por tarea
+
+Si estabas pagando Opus 5, esto es un recorte de factura sin tocar el código.
+
+Fuente oficial: anthropic.com/news/claude-opus-5-5
+
+—
+#ClaudeOpus #Anthropic #IA #devs #programacion #herramientasIA

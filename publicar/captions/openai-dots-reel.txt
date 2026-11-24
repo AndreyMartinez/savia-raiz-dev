@@ -1,0 +1,17 @@
+Tu agente ya no espera tu mensaje 🤖
+
+OpenAI presentó los dots en su DevDay del 29 de septiembre: agentes persistentes que siguen trabajando cuando tú no estás.
+
+Cómo son:
+▫️ Corren sobre GPT-6 Astra, con su propio computador en la nube y navegador
+▫️ Separados de tus dispositivos: siguen aunque apagues el tuyo
+▫️ Recuerdan entre sesiones y se adelantan en tus apps conectadas
+▫️ Tres modos de correa: que siga solo, que pregunte antes o que te devuelva el control
+▫️ Hoy en Pro, Business y Enterprise en beta, fuera de Europa, Reino Unido y Suiza
+
+El cambio de fondo: dejas de pedir tareas y empiezas a delegar responsabilidades.
+
+Fuente oficial: openai.com, 29 sep 2026
+
+—
+#OpenAI #agentesIA #IA #programacion #devs #automatizacion

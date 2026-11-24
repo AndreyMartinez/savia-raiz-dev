@@ -1,0 +1,64 @@
+{
+  "slug": "gpt-6-astra",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "LANZAMIENTO · IA",
+      "title": "GPT-6 Astra saturó los benchmarks",
+      "sub": "OpenAI lo llama su modelo más inteligente y alineado. Los números casi no dejan techo."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "EL LANZAMIENTO",
+      "h": "¿Qué salió y cuándo?",
+      "body": "OpenAI lanzó GPT-6 Astra el 3 de septiembre de 2026: primero a usuarios aprobados, al día siguiente para todos. Está pensado para trabajo de punta a punta — ingeniería de software, investigación, ciencia y tareas largas con uso de computador y navegador."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EN NÚMEROS",
+      "h": "Benchmarks sin techo",
+      "unit": "%",
+      "max": 100,
+      "bars": [
+        {"label": "ARC-AGI-3", "value": 99.9, "note": "saturado, con el adaptador de OpenAI"},
+        {"label": "FrontierMath Tier 4", "value": 97.6, "note": "el nivel más difícil"},
+        {"label": "OSWorld 2.0", "value": 72.6, "note": "uso de computador, nuevo récord"}
+      ],
+      "foot": "Fuente: openai.com/index/gpt-6-astra"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "DÓNDE SE NOTA",
+      "h": "Más rápido y menos hablador",
+      "items": [
+        ["Agentes:", "72.6% en OSWorld 2.0 con ~47% menos tiempo por tarea que GPT-5.6 Sol."],
+        ["Eficiencia:", "27K tokens de salida por tarea, un tercio de Claude Fable 5.1 para el mismo puntaje."],
+        ["Alucinaciones:", "del 92% al 51% a máximo esfuerzo, y +4 puntos de precisión."]
+      ],
+      "foot": "Medición: artificialanalysis.ai"
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "FICHA TÉCNICA",
+      "h": "Los números base",
+      "items": [
+        ["Precio:", "$10 / $50 por millón de tokens — 2.5× más que GPT-5.6 Sol."],
+        ["Contexto:", "ventana de 1M de tokens, hasta 128K de salida."],
+        ["Fast mode:", "hasta 2.5× de velocidad, al doble de precio."]
+      ]
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "Astra empata a Fable 5.1 en inteligencia y en agentes de código, gastando un tercio de los tokens — pero cobra 2.5× más que el modelo que reemplaza.",
+      "cta": ["Guarda este post para tenerlo a mano", "Sígueme: un concepto nuevo cada 3 días", "@saviaraiz.dev"]
+    }
+  ]
+}

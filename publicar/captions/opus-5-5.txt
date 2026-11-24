@@ -1,0 +1,15 @@
+⚡ Opus 5.5: por primera vez el mejor no es el más caro
+
+Anthropic lo lanzó el 22 de septiembre de 2026, a menos de dos meses de Opus 5. Le gana a Fable 5.1 —el modelo de frontera— en código y agentes, y aun así baja de precio: $4/$20 por millón de tokens y lecturas de caché 60% más baratas.
+
+En este carrusel:
+▫️ Qué salió y por qué importa que llegara tan rápido
+▫️ El salto en un gráfico: OSWorld 2.0, Terminal-Bench 4.0 y AutomationBench
+▫️ Cómo queda frente a Fable 5.1: 66.4% vs 55.8% en Terminal-Bench, 1846 vs 1735 Elo en GDPval
+▫️ El precio: ~40% menos por tarea que Opus 5
+
+Si ya estabas pagando Opus 5, esto es un recorte de factura sin tocar el código. ¿Ya migraste? 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#ClaudeOpus #Anthropic #IA #inteligenciaartificial #desarrollo #programacion #devs #herramientasIA #softwaredev #programador #aprenderaprogramar #machinelearning

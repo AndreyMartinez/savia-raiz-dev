@@ -1,0 +1,15 @@
+⚙️ React Compiler ahora corre en Rust — y el build lo nota
+
+Next.js 16.3 mete una versión experimental del React Compiler directo dentro de Turbopack, como código nativo en Rust. Antes tenía que pasar por Babel en Node.js: generar código, y que Turbopack lo volviera a parsear. Ahora vive en el mismo binario, sin esa frontera de serialización.
+
+En este carrusel:
+▫️ Qué cambió respecto al camino vía Babel/Node
+▫️ Por qué desaparece el "viaje de ida y vuelta"
+▫️ Los números: 34% más rápido en cold build, 46% en warm build
+▫️ Cómo activarlo hoy (todavía experimental)
+
+¿Ya estás en Next.js 16.3? ¿Vas a probar el flag? Cuéntame 👇
+Guarda esto 🔖 para tenerlo a mano.
+
+—
+#NextJS #React #Rust #Turbopack #webdev #frontend #desarrolloweb #programacion #devs #softwaredev #programador #aprenderaprogramar

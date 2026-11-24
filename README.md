@@ -42,7 +42,7 @@ producir varios carruseles en tanda o automatizar.
 ```bash
 pip install -r requirements.txt
 cd generador_imagenes
-python generar.py contenido/mcp.json
+./.venv/bin/python3 generador_imagenes/generar.py generador_imagenes/contenido/mcp.json
 # -> salida/mcp/mcp-01.png … mcp-06.png
 # -> también genera ../generador_html/mcp.html para revisar antes de publicar
 ```

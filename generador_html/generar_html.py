@@ -20,9 +20,10 @@ import argparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
-from paletas import INK, MUTED, elegir_paleta
+from paletas import INK, MUTED, BODY, STRONG, elegir_paleta
 
-LOGO_PATH = os.path.join(HERE, "..", "assets", "logo-white.png")
+LOGO_OSCURO = os.path.join(HERE, "..", "assets", "logo.png")
+LOGO_CLARO = os.path.join(HERE, "..", "assets", "logo-white.png")
 CAPTIONS_DIR = os.path.join(HERE, "..", "publicar", "captions")
 
 
@@ -30,8 +31,11 @@ def _esc(txt):
     return html.escape(str(txt), quote=False)
 
 
-def _logo_base64():
-    with open(LOGO_PATH, "rb") as f:
+def _logo_base64(paleta):
+    # Paletas oscuras (fondo oscuro) usan el logo ya convertido a blanco;
+    # la paleta "blanco" (fondo claro) usa el logo original, oscuro.
+    path = LOGO_OSCURO if paleta.get("claro") else LOGO_CLARO
+    with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode("ascii")
 
 
@@ -43,7 +47,7 @@ def _leer_caption(slug):
     return "(Pega aquí el caption + hashtags — ver publicar/captions/)"
 
 
-def _slide_html(slide, slug, total):
+def _slide_html(slide, slug, total, paleta):
     num = slide["num"]
     kind = slide["kind"]
     rail = (
@@ -87,7 +91,7 @@ def _slide_html(slide, slug, total):
         rows = []
         for b in slide["bars"]:
             pct = round(min(max(b["value"] / maxv, 0), 1) * 100, 1)
-            note = f'{b["value"]:g}{unit}'
+            note = _esc(b["vlabel"]) if b.get("vlabel") else f'{b["value"]:g}{unit}'
             if b.get("note"):
                 note += f'  ·  {_esc(b["note"])}'
             rows.append(f'''          <div class="bar-row">
@@ -111,7 +115,7 @@ def _slide_html(slide, slug, total):
           <h2 contenteditable>{_esc(slide["h"])}</h2>
           <div class="one" contenteditable>{_esc(slide["one"])}</div>
           <div class="sign">
-            <img src="data:image/png;base64,{_logo_base64()}" alt="Savia Raíz">
+            <img src="data:image/png;base64,{_logo_base64(paleta)}" alt="Savia Raíz">
             <div class="cta">
               <div contenteditable>{_esc(cta[0])}</div>
               <div contenteditable>{_esc(cta[1])}</div>
@@ -140,7 +144,7 @@ TEMPLATE = """<meta charset="utf-8">
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
   :root{{
     --bg:{bg}; --panel:#0C1326; --slide-a:{slide_a}; --slide-b:{slide_b};
-    --ink:{ink}; --muted:{muted}; --line:rgba(120,150,220,0.14);
+    --ink:{ink}; --muted:{muted}; --body:{body}; --strong:{strong}; --line:rgba(120,150,220,0.14);
     --accent:{accent}; --accent2:{accent2}; --chip:rgba(91,140,255,0.12);
     --scale:0.42;
   }}
@@ -157,13 +161,13 @@ TEMPLATE = """<meta charset="utf-8">
   .btn.primary{{background:linear-gradient(90deg,var(--accent),var(--accent2));border:none;color:#fff;font-weight:600}}
   .wrap{{max-width:560px;margin:0 auto;padding:26px 16px 80px}}
   .slides{{display:flex;flex-direction:column;gap:30px;align-items:center}}
-  .slide-wrap{{position:relative;width:calc(1080px*var(--scale));height:calc(1080px*var(--scale));
+  .slide-wrap{{position:relative;width:calc(1080px*var(--scale));height:calc(1350px*var(--scale));
     border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.55)}}
   .dl{{position:absolute;bottom:9px;right:9px;z-index:5;font-family:'JetBrains Mono';font-size:11px;
     background:rgba(8,13,26,.72);color:var(--ink);border:1px solid var(--line);border-radius:7px;
     padding:6px 10px;cursor:pointer;backdrop-filter:blur(4px)}}
   .dl:hover{{border-color:var(--accent);color:#fff}}
-  .slide{{width:1080px;height:1080px;transform:scale(var(--scale));transform-origin:top left;position:relative;overflow:hidden;
+  .slide{{width:1080px;height:1350px;transform:scale(var(--scale));transform-origin:top left;position:relative;overflow:hidden;
     background:
       radial-gradient(1200px 600px at 78% -10%, rgba(91,140,255,.10), transparent 60%),
       radial-gradient(900px 700px at -10% 110%, rgba(155,107,255,.09), transparent 55%),
@@ -188,7 +192,7 @@ TEMPLATE = """<meta charset="utf-8">
     margin-bottom:26px;display:inline-flex;align-items:center;gap:12px}}
   .kicker::before{{content:"";width:34px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}}
   h2{{font-family:'Space Grotesk';font-weight:700;line-height:1.04;margin:0}}
-  p,li{{font-size:34px;line-height:1.42;color:#D3DCF0;margin:0}}
+  p,li{{font-size:34px;line-height:1.42;color:var(--body);margin:0}}
   .cover .eyebrow{{font-family:'JetBrains Mono';font-size:22px;letter-spacing:4px;color:var(--muted)}}
   .cover h2{{font-size:104px;margin:34px 0 0;letter-spacing:-1px}}
   .cover .sub{{font-size:38px;color:var(--muted);margin-top:26px;max-width:640px}}
@@ -199,19 +203,19 @@ TEMPLATE = """<meta charset="utf-8">
   ul.pts li{{position:relative;padding-left:44px;max-width:730px}}
   ul.pts li::before{{content:"";position:absolute;left:0;top:15px;width:14px;height:14px;border-radius:4px;
     background:linear-gradient(135deg,var(--accent),var(--accent2))}}
-  ul.pts li b{{color:#fff;font-weight:600}}
+  ul.pts li b{{color:var(--strong);font-weight:600}}
   .foot{{font-family:'JetBrains Mono';font-size:24px;color:var(--accent);margin-top:auto}}
   .chart{{display:flex;flex-direction:column;gap:36px;margin-top:6px}}
-  .bar-label{{font-family:'Space Grotesk';font-weight:600;font-size:32px;color:#fff;margin-bottom:14px}}
+  .bar-label{{font-family:'Space Grotesk';font-weight:600;font-size:32px;color:var(--strong);margin-bottom:14px}}
   .bar-track{{width:100%;height:34px;border-radius:17px;background:rgba(120,150,220,.14);overflow:hidden}}
   .bar-fill{{height:100%;border-radius:17px;background:linear-gradient(90deg,var(--accent),var(--accent2))}}
   .bar-note{{font-family:'JetBrains Mono';font-size:22px;color:var(--muted);margin-top:10px}}
   .end h2{{font-size:60px}}
-  .end .one{{font-size:44px;color:#fff;line-height:1.38;max-width:730px;font-family:'Space Grotesk';font-weight:500;margin-top:24px}}
+  .end .one{{font-size:44px;color:var(--strong);line-height:1.38;max-width:730px;font-family:'Space Grotesk';font-weight:500;margin-top:24px}}
   .end .sign{{margin-top:auto;border-top:1px solid var(--line);padding-top:34px;display:flex;align-items:center;gap:34px}}
   .end .sign img{{height:150px;width:auto;opacity:.95}}
   .end .sign .cta{{display:flex;flex-direction:column;gap:12px}}
-  .end .sign .cta div{{font-size:30px;color:#D3DCF0}}
+  .end .sign .cta div{{font-size:30px;color:var(--body)}}
   .end .sign .cta .handle{{font-family:'JetBrains Mono';font-size:28px;color:var(--accent)}}
   [contenteditable]{{outline:none;border-radius:6px;transition:box-shadow .15s}}
   [contenteditable]:hover{{box-shadow:0 0 0 2px rgba(91,140,255,.25)}}
@@ -226,7 +230,7 @@ TEMPLATE = """<meta charset="utf-8">
 
 <div class="bar">
   <h1><span class="dot"></span>Carrusel {titulo} · Savia Raíz</h1>
-  <span class="hint">Haz clic en cualquier texto para editarlo · vista previa aquí · descarga en PNG 1080×1080 · paleta: {paleta_nombre}</span>
+  <span class="hint">Haz clic en cualquier texto para editarlo · vista previa aquí · descarga en PNG 1080×1350 · paleta: {paleta_nombre}</span>
   <button class="btn primary" id="all">⬇ Descargar todas</button>
 </div>
 
@@ -253,8 +257,8 @@ TEMPLATE = """<meta charset="utf-8">
     await document.fonts.ready;
     const prev = slide.style.transform;
     slide.style.transform = 'none';
-    const canvas = await html2canvas(slide, {{backgroundColor:'#0A1020', width:1080, height:1080,
-      windowWidth:1080, windowHeight:1080, scale:1, useCORS:true}});
+    const canvas = await html2canvas(slide, {{backgroundColor:'{slide_a}', width:1080, height:1080,
+      windowWidth:1080, windowHeight:1350, scale:1, useCORS:true}});
     slide.style.transform = prev;
     return canvas;
   }}
@@ -299,13 +303,15 @@ def generar(contenido_path, paleta=None, salida=None):
     slides = data["slides"]
     total = len(slides)
 
-    slides_html = "\n\n".join(_slide_html(s, slug, total) for s in slides)
+    slides_html = "\n\n".join(_slide_html(s, slug, total, paleta) for s in slides)
 
     doc = TEMPLATE.format(
         titulo=_esc(slug.upper()),
         slug=slug,
         bg=paleta["bg"], slide_a=paleta["slide_a"], slide_b=paleta["slide_b"],
-        ink=INK, muted=MUTED, accent=paleta["accent"], accent2=paleta["accent2"],
+        ink=paleta.get("ink", INK), muted=paleta.get("muted", MUTED),
+        body=paleta.get("body", BODY), strong=paleta.get("strong", STRONG),
+        accent=paleta["accent"], accent2=paleta["accent2"],
         paleta_nombre=paleta["nombre"],
         slides=slides_html,
         caption=_esc(_leer_caption(slug)),

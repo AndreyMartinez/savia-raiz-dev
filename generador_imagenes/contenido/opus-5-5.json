@@ -1,0 +1,178 @@
+{
+  "slug": "opus-5-5",
+  "slides": [
+    {
+      "kind": "cover",
+      "num": "01",
+      "eyebrow": "LANZAMIENTO · IA",
+      "title": "Opus 5.5 le ganó al modelo de frontera",
+      "sub": "Y encima bajó de precio. Anthropic lo sacó dos meses después de Opus 5."
+    },
+    {
+      "kind": "text",
+      "num": "02",
+      "kicker": "EL LANZAMIENTO",
+      "h": "Dos meses, un salto",
+      "body": "Anthropic lanzó Claude Opus 5.5 el 22 de septiembre de 2026, menos de dos meses después de Opus 5. Rinde al nivel de Fable 5.1 en la mayoría del trabajo, genera más del 30% más rápido y cuesta alrededor de 40% menos por tarea."
+    },
+    {
+      "kind": "chart",
+      "num": "03",
+      "kicker": "EN NÚMEROS",
+      "h": "Dónde está el salto",
+      "unit": "%",
+      "max": 100,
+      "bars": [
+        {
+          "label": "OSWorld 2.0",
+          "value": 81.8,
+          "note": "Opus 5 sacaba 74%"
+        },
+        {
+          "label": "Terminal-Bench 4.0",
+          "value": 66.4,
+          "note": "Opus 5 sacaba 52.3%"
+        },
+        {
+          "label": "AutomationBench",
+          "value": 40.0,
+          "note": "Opus 5 sacaba 26.9%"
+        }
+      ],
+      "foot": "Fuente: anthropic.com/news/claude-opus-5-5"
+    },
+    {
+      "kind": "list",
+      "num": "04",
+      "kicker": "VS. EL DE FRONTERA",
+      "h": "Le pasó por encima a Fable 5.1",
+      "items": [
+        [
+          "Terminal-Bench 4.0:",
+          "66.4% contra 55.8% de Fable 5.1."
+        ],
+        [
+          "CursorBench 4.0:",
+          "57.8% contra 51.8%, y 46.6% del propio Opus 5."
+        ],
+        [
+          "GDPval-AA v2.1:",
+          "1846 Elo en trabajo de conocimiento, contra 1735."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "num": "05",
+      "kicker": "EL PRECIO",
+      "h": "Más potente y más barato",
+      "items": [
+        [
+          "Tokens:",
+          "$4 / $20 por millón, 20% menos que Opus 5."
+        ],
+        [
+          "Caché:",
+          "las lecturas bajan 60%, de $0.50 a $0.20 por millón."
+        ],
+        [
+          "En la práctica:",
+          "~40% menos por tarea, sumando precio y menos tokens."
+        ]
+      ]
+    },
+    {
+      "kind": "end",
+      "num": "06",
+      "kicker": "RESUMEN",
+      "h": "En una frase",
+      "one": "Opus 5.5 rompe la regla de que lo mejor cuesta más: gana en código, agentes y uso de computador, y sale 40% más barato que el modelo al que reemplaza.",
+      "cta": [
+        "Guarda este post para tenerlo a mano",
+        "Sígueme: un concepto nuevo cada 3 días",
+        "@saviaraiz.dev"
+      ]
+    }
+  ],
+  "reel": {
+    "estilo": "energico",
+    "escenas": [
+      {
+        "tipo": "frase",
+        "kicker": "LANZAMIENTO · IA",
+        "titulo": "Le ganó al mejor|y encima bajó de precio",
+        "voz": "Anthropic sacó un modelo que le gana al de frontera… y lo puso más barato.",
+        "imagen": {
+          "base": "A classic brass balance scale: one small polished metal cube on the left pan clearly outweighs a much larger, rough, hollow-looking block on the right",
+          "despues": "Tip the balance further, so the small cube settles decisively at the bottom and the large block lifts high"
+        }
+      },
+      {
+        "tipo": "numero",
+        "etiqueta": "USANDO UNA COMPUTADORA",
+        "valor": 81.8,
+        "antes": 74.0,
+        "unidad": "%",
+        "texto": "Opus 5.5 contra Opus 5.",
+        "voz": "Contra su propia versión anterior subió a casi ochenta y dos por ciento.",
+        "imagen": {
+          "base": "A single stack of polished metal discs standing on a dark stone surface, precisely machined, catching the rim light",
+          "despues": "Add several more discs to the top of the same stack, making it noticeably taller"
+        }
+      },
+      {
+        "tipo": "numero",
+        "etiqueta": "TRABAJANDO EN LA TERMINAL",
+        "valor": 66.4,
+        "antes": 52.3,
+        "unidad": "%",
+        "voz": "Y en la terminal pasó de cincuenta y dos… a sesenta y seis.",
+        "imagen": {
+          "base": "A long brushed-steel measuring rod lying on a dark surface, with a small worn brass marker resting near its lower end",
+          "despues": "Slide a second gleaming marker far up the rod, well past the old brass one"
+        }
+      },
+      {
+        "tipo": "comparacion",
+        "etiqueta": "VS. EL DE FRONTERA",
+        "unidad": "%",
+        "a": {
+          "label": "Opus 5.5",
+          "valor": 66.4
+        },
+        "b": {
+          "label": "Fable 5.1",
+          "valor": 55.8
+        },
+        "voz": "Eso es más que Fable cinco punto uno, que era el modelo de frontera.",
+        "imagen": {
+          "base": "Two smooth stone spheres of the same size resting side by side on a dark surface, the left one polished to a mirror finish and the right one matte and dull"
+        }
+      },
+      {
+        "tipo": "numero",
+        "etiqueta": "MÁS BARATO POR TAREA",
+        "valor": 40,
+        "unidad": "%",
+        "nota": "y la caché, 60% menos",
+        "voz": "Lo raro es el precio. Alrededor de cuarenta por ciento menos por tarea.",
+        "imagen": {
+          "base": "A tall stack of coins on a dark surface, dense and heavy",
+          "despues": "Remove most of the coins, leaving a much shorter stack in the same spot"
+        }
+      },
+      {
+        "tipo": "cierre-visual",
+        "titulo": "Lo mejor ya no es|lo más caro.",
+        "cta": [
+          "Guarda este Reel"
+        ],
+        "handle": "@saviaraiz.dev",
+        "voz": "Rompe la regla de que lo mejor cuesta más. Sígueme si te sirve esto.",
+        "imagen": {
+          "base": "A single polished metal key standing upright on a dark stone surface, lit so it casts one long clean shadow"
+        }
+      }
+    ]
+  }
+}

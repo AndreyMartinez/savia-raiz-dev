@@ -15,12 +15,27 @@ import json
 
 INK = "#EAF0FB"
 MUTED = "#8A99BC"
+BODY = "#D3DCF0"
+STRONG = "#FFFFFF"
 
+# ink/muted/body/strong: jerarquía de texto (título, secundario, párrafo/ítem,
+# énfasis en negrita). Las 4 paletas oscuras usan los mismos valores que antes
+# (INK/MUTED/BODY/STRONG de arriba) para que un carrusel ya publicado no
+# cambie de aspecto. "blanco" es la única paleta clara y por eso invierte la
+# jerarquía a tonos oscuros sobre fondo casi blanco; "claro": True le dice a
+# generar.py y generar_html.py que usen el logo oscuro (assets/logo.png) en
+# vez del logo blanco pensado para fondo oscuro.
 PALETTES = [
     {"nombre": "indigo",    "bg": "#0B1326", "slide_a": "#0D1730", "slide_b": "#090F1F", "accent": "#5B8CFF", "accent2": "#9B6BFF"},
     {"nombre": "esmeralda", "bg": "#081A16", "slide_a": "#0C231D", "slide_b": "#061410", "accent": "#34D399", "accent2": "#2DD4BF"},
     {"nombre": "vino",      "bg": "#1A0E14", "slide_a": "#241019", "slide_b": "#170A0F", "accent": "#FB7185", "accent2": "#FDBA74"},
     {"nombre": "cian",      "bg": "#071722", "slide_a": "#0B222F", "slide_b": "#050F17", "accent": "#22D3EE", "accent2": "#818CF8"},
+    {
+        "nombre": "blanco", "bg": "#FAFBFE", "slide_a": "#FFFFFF", "slide_b": "#F1F4FA",
+        "accent": "#2F6FED", "accent2": "#00B8A9",
+        "ink": "#10182B", "muted": "#66708A", "body": "#333B52", "strong": "#10182B",
+        "claro": True,
+    },
 ]
 
 _ASIGNACIONES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "paletas_asignadas.json")
