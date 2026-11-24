@@ -16,3 +16,13 @@ generador_imagenes/salida/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Reel vertical: caché de voz de Gemini y cuadros de revisión
+generador_short/.voz/
+generador_short/revision/
+generador_short/muestras/
+generador_short/.imagenes/
+generador_short/.musica/
+
+# Los Reels renderizados son salida generada, como los PNG del carrusel
+generador_short/*.mp4
