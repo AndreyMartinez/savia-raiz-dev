@@ -32,8 +32,7 @@ def _diagnostico(codigo, detalle):
     """Mismo criterio que en voz.py: un 429 por tope de gasto no se arregla
     reintentando, y conviene decirlo con todas sus letras."""
     import voz
-    claro = voz.explicar_429(detalle) if codigo == 429 else None
-    return claro or f"Gemini (imagen) {codigo}: {detalle}"
+    return voz.explicar(codigo, detalle) or f"Gemini (imagen) {codigo}: {detalle}"
 
 
 def _luminancia(hex_color):

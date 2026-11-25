@@ -506,7 +506,9 @@ def titulo_ajustado(texto, tam, ancho=ANCHO):
         if all(ancho_de(l, font) <= ancho for l in lineas):
             break
     else:  # ni en el cuerpo mínimo cabe el corte a mano: se reparte solo
-        lineas = envolver(texto, font, ancho)
+        # Ojo con el "|": si se re-envuelve el texto crudo, la barra se imprime
+        # tal cual en pantalla. Pasó una vez y no se nota hasta ver el cuadro.
+        lineas = envolver(texto.replace("|", " "), font, ancho)
     r = (font, lineas, int(font.size * 1.16))
     _MEMO_TITULO[llave] = r
     return r

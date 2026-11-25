@@ -113,7 +113,30 @@ def leer_llave(env=None):
 
 
 # ---- Gemini --------------------------------------------------------------
-def explicar_429(detalle):
+def explicar(codigo, detalle):
+    """Traduce los errores de cuota y cobro de Gemini, que no significan lo mismo.
+
+    - 402 créditos agotados: no se arregla esperando ni mañana. Hay que
+      recargar el proyecto.
+    - 429 tope de gasto: el proyecto tiene un límite mensual y lo alcanzó;
+      hay que subirlo.
+    - 429 cuota diaria: se reinicia a medianoche del Pacífico.
+    - el resto: congestión pasajera, y ahí sí vale reintentar."""
+    if codigo == 402 or re.search(r"prepayment|credits are depleted", detalle, re.I):
+        return ("Se acabaron los créditos de prepago del proyecto de Gemini.\n"
+                "  Esto no se destraba esperando: hay que recargar en "
+                "ai.studio/projects (Facturación).\n"
+                "  Lo ya generado queda en caché y no se vuelve a pedir, así que al "
+                "recargar se sigue donde se quedó.\n"
+                "  Mientras tanto se puede armar el Reel sin gastar: --sin-voz "
+                "--sin-imagenes --musica-simple (sale mudo y con el fondo de marca, "
+                "pero deja ver la estructura y los tiempos).")
+    if codigo != 429:
+        return None
+    return _explicar_429(detalle)
+
+
+def _explicar_429(detalle):
     """Traduce los 429 de Gemini, que no todos significan lo mismo.
 
     - tope de gasto: el proyecto tiene un límite mensual y lo alcanzó. No se
@@ -163,10 +186,10 @@ def _pedir(key, texto, voz, direccion):
             break
         except urllib.error.HTTPError as e:
             detalle = e.read().decode(errors="replace")[:400]
-            claro = explicar_429(detalle) if e.code == 429 else None
+            claro = explicar(e.code, detalle)
             if claro:
                 raise SystemExit(claro)
-            if (e.code == 429 or e.code >= 500) and intento < 3:
+            if e.code != 402 and (e.code == 429 or e.code >= 500) and intento < 3:
                 print(f"  … Gemini {e.code}, reintento {intento} en {intento * 20} s",
                       flush=True)
                 time.sleep(intento * 20)
